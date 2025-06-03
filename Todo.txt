@@ -1,0 +1,4 @@
+- Modify Infix and Postfix to include decimal
+- Create Controller to link View to Model
+- Modify View to increase display window
+- Modify Controller to add event listens for buttons
