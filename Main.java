@@ -1,14 +1,20 @@
+import Model.Model;
+import View.View;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String infix = "3+(4*5)-2";
-        String postfix = InfixToPostfix.infixToPostfix(infix);
+        View calculator = new View();
+        calculator.launch();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter infix expression: ");
+        String input = scanner.nextLine();
 
-        if (postfix.equals("This expression is invalid")) {
-            System.out.println(postfix);
-        } else {
-            System.out.println("Postfix: " + postfix);
-            String[] tokens = postfix.split(" ");
-            int result = PostfixToAnswer.evaluatePostfix(tokens);
+        Model model = new Model();
+        int result = model.processExpression(input);
+
+        if (result != Integer.MIN_VALUE) {
             System.out.println("Result: " + result);
         }
     }
